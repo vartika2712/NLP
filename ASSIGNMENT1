@@ -1,0 +1,36 @@
+Q1. Explain One-Hot Encoding
+Q2. Explain Bag of Words
+Q3. Explain Bag of N-Grams
+Q4. Explain TF-IDF
+Q5. What is OOV problem?
+Q6. What are word embeddings?
+Q7. Explain Continuous bag of words (CBOW)
+Q8. Explain SkipGram
+Q9. Explain Glove Embeddings.
+SOLUTIONS.
+1. One-Hot Encoding:
+One-Hot Encoding is a technique used to represent categorical data numerically. It converts categorical variables into a binary vector representation. In this encoding scheme, each category is assigned a unique binary value, where all values are zero except for the index corresponding to the category, which is set to one. This representation allows machine learning algorithms to process categorical data effectively, as they typically require numerical inputs. One-Hot Encoding is commonly used in natural language processing (NLP) tasks, such as text classification, where words or tokens are encoded as one-hot vectors.
+
+2. Bag of Words (BoW):
+Bag of Words is a simple technique used to represent text data numerically. It creates a vocabulary of unique words from a given corpus and represents each document or piece of text as a vector of word frequencies. The order of words is disregarded, and only the occurrence or absence of words is considered. The resulting vector represents the "bag" of words present in the document. BoW is often used as a basic feature extraction method in NLP tasks like sentiment analysis, document classification, and information retrieval.
+
+3. Bag of N-Grams:
+Bag of N-Grams is an extension of the Bag of Words approach that considers sequences of N contiguous words (known as N-grams) instead of individual words. It captures some contextual information by preserving the word order within the N-gram. For example, in addition to individual words, a bag of 2-grams for the sentence "I love to play soccer" would include "I love," "love to," "to play," and "play soccer." This technique can help in capturing some local syntactic and semantic information but may suffer from the curse of dimensionality when using higher-order N-grams.
+
+4. TF-IDF (Term Frequency-Inverse Document Frequency):
+TF-IDF is a numerical statistic used to evaluate the importance of a word in a document within a collection of documents. It combines two components: term frequency (TF), which measures the frequency of a word in a document, and inverse document frequency (IDF), which measures the rarity of the word across the entire document collection. TF-IDF assigns higher weights to words that appear frequently in a specific document but less frequently across the entire corpus. This technique helps to highlight words that are both important to a specific document and distinct within the collection. TF-IDF is commonly used for information retrieval, text mining, and text classification tasks.
+
+5. OOV Problem (Out-of-Vocabulary Problem):
+The OOV problem refers to the challenge encountered when encountering words that are not present in the vocabulary or training data of a natural language processing model. Out-of-vocabulary words may arise due to spelling errors, newly introduced terms, or domain-specific jargon. When a word is not recognized by a language model, it is typically represented as an OOV token or handled as an unknown word. The OOV problem can lead to inaccurate predictions or errors when processing text data, especially in tasks like machine translation or text generation. Strategies to mitigate the OOV problem include using larger training datasets, incorporating external word embeddings, or employing techniques like character-level embeddings.
+
+6. Word Embeddings:
+Word embeddings are dense, low-dimensional vector representations that capture the semantic meaning of words. Unlike one-hot encoded or sparse representations, word embeddings encode semantic relationships and contextual information by mapping words to vectors in a continuous space. They are learned from large text corpora using techniques like Word2Vec, GloVe, or fastText. Word embeddings enable language models to associate similar words and measure their similarity based on vector distances. These representations are valuable for various NLP tasks, including language translation, sentiment analysis, and named entity recognition.
+
+7. Continuous Bag of Words (CBOW):
+Continuous Bag of Words (CBOW) is a neural network architecture used to learn word embeddings from large text corpora. In CBOW, the model predicts a target word given its context (surrounding words within a fixed window size). The model takes the average of the word embeddings of the context words and predicts the target word. CBOW aims to capture the meaning of a word based on its local context. It is computationally efficient and performs well when training data is abundant.
+
+8. SkipGram:
+SkipGram is another neural network architecture used to learn word embeddings. Unlike CBOW, SkipGram predicts the context words given a target word. It aims to capture the context and meaning of a word by training the model to predict the surrounding words based on the target word. SkipGram is useful when the training data is limited or when capturing rare words and their relationships is important. It is also known to perform better than CBOW on larger datasets.
+
+9. Glove Embeddings:
+GloVe (Global Vectors for Word Representation) is a word embedding model that learns vector representations by capturing global statistical information from large text corpora. Unlike Word2Vec's focus on local context, GloVe combines word co-occurrence statistics to generate word embeddings. It considers the probability of words co-occurring in the same context, aiming to capture the global relationships between words. The resulting word embeddings reflect the semantic meaning and relationships between words. GloVe embeddings have been widely used in NLP tasks like word similarity, document classification, and sentiment analysis.
