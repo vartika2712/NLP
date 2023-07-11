@@ -1,0 +1,78 @@
+Q1. What are Corpora?
+Q2. What are Tokens?
+Q3. What are Unigrams, Bigrams, Trigrams?
+Q4. How to generate n-grams from text?
+Q5. Explain Lemmatization
+Q6. Explain Stemming
+Q7. Explain Part-of-speech (POS) tagging
+Q8. Explain Chunking or shallow parsing
+Q9. Explain Noun Phrase (NP) chunking
+Q10. Explain Named Entity Recognition
+
+SOLUTIONS.
+1. Corpora, in the context of natural language processing (NLP), refer to large and structured collections of text or speech data that are used for linguistic analysis and modeling. Corpora can consist of various types of texts, such as books, articles, transcripts, social media posts, and more. They serve as valuable resources for training and evaluating NLP models.
+
+2. Tokens are the individual units or elements into which a text or sentence is divided. These units can be words, characters, or even smaller elements like subwords or morphemes, depending on the level of granularity required for analysis. Tokenization is the process of breaking down a piece of text into its constituent tokens.
+
+3. Unigrams, bigrams, and trigrams are different types of n-grams, which are contiguous sequences of n items (usually words) in a given text. 
+
+   - Unigrams: These are single words considered as individual tokens. For example, in the sentence "I love cats," the unigrams would be "I," "love," and "cats."
+   
+   - Bigrams: These are sequences of two consecutive words. In the same example sentence, the bigrams would be "I love" and "love cats."
+   
+   - Trigrams: These are sequences of three consecutive words. In the example sentence, the trigram would be "I love cats."
+   
+   N-grams are useful in various NLP tasks, such as language modeling, information retrieval, and machine translation.
+
+4. To generate n-grams from a given text, you can follow these steps:
+
+   - Tokenize the text into individual units (e.g., words).
+   - Slide a window of size n over the tokens.
+   - For each window position, collect the n consecutive tokens as an n-gram.
+   - Continue this process until you have generated all the possible n-grams from the text.
+
+   For example, given the sentence "I love cats," if you want to generate bigrams, you would slide a window of size 2 over the tokens ("I," "love," "cats") to get the bigrams "I love" and "love cats."
+
+5. Lemmatization is the process of reducing words to their base or dictionary form, known as the lemma. The goal of lemmatization is to normalize different inflected forms of a word to their common base form, which can be useful for tasks such as text analysis and information retrieval.
+
+   For example, the lemma of the words "running," "ran," and "runs" would be "run." By reducing different inflected forms to a common lemma, lemmatization helps to consolidate the variants of a word and can improve the accuracy of text analysis.
+
+6. Stemming is a process similar to lemmatization, but it involves reducing words to their root or base form by removing suffixes. The resulting form may not always be a valid word or lemma, but it is a truncated representation of the original word.
+
+   For example, when stemming the words "running," "ran," and "runs," the stem would be "run." Stemming can be a simpler and faster approach compared to lemmatization, but it may produce less linguistically accurate results.
+
+7. Part-of-speech (POS) tagging is the process of assigning grammatical labels or tags to words in a sentence, based on their syntactic category and role in the sentence structure. These tags represent the parts of speech, such as nouns, verbs, adjectives, adverbs, pronouns, prepositions, conjunctions, and more.
+
+   POS tagging is important in various NLP tasks, such as information extraction, machine translation, and sentiment analysis. It helps in understanding the syntactic relationships between words and provides useful context for further analysis.
+
+8. Chunking, also known as shallow parsing, is the process of grouping words together into meaningful units called chunks based on their syntactic structure. These chunks typically correspond to phrases, such as noun phrases (NP), verb phrases (VP), prepositional phrases (PP), and more.
+
+   Chunking relies on POS tags assigned to words in a sentence and identifies contiguous sequences of words that form a specific phrase. For example, in the sentence "The cat is on the mat," the noun phrase chunk would be "The cat" and the prepositional phrase chunk would be "on the mat."
+
+9. Noun Phrase (NP) chunking is a specific type of chunking that focuses on identifying and grouping noun phrases in a sentence. Noun phrases are phrases that include a noun and any associated modifiers or determiners.
+
+   NP chunking helps in extracting meaningful information from sentences by capturing the subjects, objects, and other noun-based entities. For example, in the sentence "John saw a black cat," the NP chunk would be "a black cat," which represents the noun phrase in the sentence.
+
+10. Named Entity Recognition (NER) is a process in NLP that involves identifying and classifying named entities in text. Named entities are specific named objects or categories, such as person names, locations, organizations, dates, numerical quantities, and more.
+
+   NER is useful for various applications, including information extraction, question answering systems, and text summarization. By recognizing and categorizing named entities, NER algorithms enable machines to understand and extract relevant information from text in a structured manner.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
