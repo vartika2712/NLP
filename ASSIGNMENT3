@@ -1,0 +1,49 @@
+Q1. Explain the basic architecture of RNN cell.
+Q2. Explain Backpropagation through time (BPTT)
+Q3. Explain Vanishing and exploding gradients
+Q4. Explain Long short-term memory (LSTM)
+Q5. Explain Gated recurrent unit (GRU)
+Q6. Explain Peephole LSTM
+Q7. Bidirectional RNNs
+Q8. Explain the gates of LSTM with equations.
+Q9. Explain BiLSTM
+Q10. Explain BiGRU
+
+SOLUTION.
+1. The basic architecture of a Recurrent Neural Network (RNN) cell consists of a single recurrent unit that processes sequential data. The recurrent unit maintains an internal hidden state, which acts as memory and captures information from previous time steps. At each time step, the RNN cell takes an input vector and the previous hidden state as inputs, and produces an output vector and updates the hidden state.
+
+2. Backpropagation through time (BPTT) is the algorithm used to train recurrent neural networks. It extends the backpropagation algorithm to handle the temporal nature of sequential data. BPTT unfolds the recurrent network over time, creating a series of connected network instances, each representing a time step. The forward pass is performed through the unfolded network, and then the gradients are computed using the chain rule. The gradients are accumulated over time and used to update the network parameters through gradient descent.
+
+3. Vanishing gradients and exploding gradients are common issues that can occur during training of recurrent neural networks, particularly with deep or long sequences. Vanishing gradients refer to the situation where the gradients calculated during backpropagation become very small as they are backpropagated through time, leading to slow learning or convergence to a suboptimal solution. Exploding gradients, on the other hand, occur when the gradients grow exponentially, causing instability and making it difficult for the network to converge.
+
+4. Long Short-Term Memory (LSTM) is a type of recurrent neural network architecture that addresses the vanishing gradient problem and allows for capturing long-term dependencies in sequential data. It introduces a memory cell, which is controlled by three gates: the input gate, the forget gate, and the output gate. These gates regulate the flow of information into, out of, and within the memory cell, enabling the LSTM to selectively remember or forget information at each time step. The LSTM cell is designed to alleviate the vanishing gradient problem and can effectively capture long-term dependencies.
+
+5. Gated Recurrent Unit (GRU) is another type of recurrent neural network architecture that also addresses the vanishing gradient problem and allows for capturing long-term dependencies. It simplifies the LSTM architecture by combining the input and forget gates into a single update gate and merging the cell state and hidden state. The update gate controls the flow of information into the hidden state, while an additional reset gate determines how much of the previous hidden state should be forgotten. GRUs have fewer gates than LSTMs, making them computationally more efficient.
+
+6. Peephole LSTM is an extension of the standard LSTM architecture that adds connections from the cell state to the gates. In a standard LSTM, the gates only have access to the current input and the previous hidden state. However, in Peephole LSTM, the gates are also able to peek at the cell state. This additional information allows the gates to have more direct control over the flow of information and can improve the modeling capabilities of the LSTM.
+
+7. Bidirectional Recurrent Neural Networks (RNNs) are a type of RNN architecture that processes sequential data in both forward and backward directions. In a bidirectional RNN, two separate recurrent networks are used: one processes the sequence in the forward direction, and the other processes it in the backward direction. By combining the information from both directions, bidirectional RNNs can capture dependencies from past and future context. This is particularly useful in tasks where the prediction at a given time step depends on both preceding and succeeding elements of the sequence.
+
+8. The gates of a standard LSTM are:
+   - Input Gate (i): Controls the amount of new information to be stored in the cell state.
+   - Forget Gate (f): Controls the amount of information to forget from the previous cell state.
+   - Output Gate (o): Controls the amount of information to output from the cell state.
+
+   The equations for the LSTM gates are as follows:
+   
+   Input gate (i):
+   i_t = σ(W_{xi}x_t + W_{hi}h_{t-1} + W_{ci}c_{t-1} + b_i)
+   
+   Forget gate (f):
+   f_t = σ(W_{xf}x_t + W_{hf}h_{t-1} + W_{cf}c_{t-1} + b_f)
+   
+   Output gate (o):
+   o_t = σ(W_{xo}x_t + W_{ho}h_{t-1} + W_{co}c_t + b_o)
+   
+   Here, σ denotes the sigmoid activation function, x_t represents the input at time step t, h_{t-1} represents the previous hidden state, c_{t-1} represents the previous cell state, W and b are the weight and bias parameters, and i_t, f_t, and o_t are the outputs of the respective gates.
+
+9. BiLSTM (Bidirectional LSTM) is a combination of the LSTM architecture and bidirectional RNNs. It consists of two LSTMs: one processes the sequence in the forward direction, and the other processes it in the backward direction. The outputs from both LSTMs are concatenated or combined in some way to provide a prediction or representation that considers both past and future context. BiLSTMs are widely used in tasks such as sequence labeling, machine translation, and speech recognition, where capturing dependencies from both directions is important.
+
+10. BiGRU (Bidirectional Gated Recurrent Unit) is a combination of the GRU architecture and bidirectional RNNs. It operates similar to BiLSTM but uses GRU cells instead of LSTM cells. It consists of two separate GRUs: one processes the sequence in the forward direction, and the other processes it in the backward direction. The outputs from both GRUs are concatenated or combined to capture information from both past and future context. BiGRUs are computationally efficient and have been successfully applied to various tasks such as sentiment analysis, machine translation, and named entity recognition.
+
+
